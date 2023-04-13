@@ -1,3 +1,7 @@
+/*
+Escreva um programa que recebe dois números e retorna o maior deles.
+*/
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;

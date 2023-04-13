@@ -1,3 +1,10 @@
+/*
+Faça um programa em C++ que peça o nome de uma pessoa, a quantidade de
+quilômetros que ela andou de bicicleta e o tempo gasto em minutos para percorrer essa
+distância. Mostre na tela uma mensagem como:
+“Olá Mário, você percorreu 30 km em 65 minutos, sua velocidade média foi: 27.7.
+*/
+
 #include <iostream>
 #include <string>
 #include <cstdlib>

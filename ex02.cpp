@@ -1,3 +1,9 @@
+/*
+Faça um programa em C++ que leia o nome e três notas do aluno. Calcule a média. Após
+o cálculo, imprima uma mensagem da forma:
+“Aluno Fulano possui média 7.0”.
+*/
+
 #include <iostream>
 #include <string>
 #include <cstdlib>

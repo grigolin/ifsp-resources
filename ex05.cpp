@@ -1,3 +1,7 @@
+/*
+Escreva um programa para determinar o maior de três números dados.
+*/
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;

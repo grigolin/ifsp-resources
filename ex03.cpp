@@ -1,3 +1,9 @@
+/*
+Faça um programa em C++ que pergunte um valor em graus Fahrenheit e imprime na
+tela o correspondente em Celsius usando a seguinte fórmula:
+Celsius = (fahrenheit – 32) * (5.0/9.0).
+*/
+
 #include <iostream>
 #include <string>
 #include <cstdlib>

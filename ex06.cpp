@@ -1,3 +1,12 @@
+/*
+Crie um programa para exibir o nome dos times (São Paulo, Santos, Palmeiras e Corinthians) na tela e que permita ao usuário a escolha de uma opção. Imprima uma mensagem sobre o time escolhido. 
+Exemplo :
+1 - São Paulo 
+2 - Santos 
+3 - Palmeiras 
+4 - Corinthians
+*/
+
 #include <iostream>
 using namespace std;
 
