@@ -1,5 +1,5 @@
 // detector de palindromo
-// poderia ter usado o strrev(), mas devido ao compilador,
+// poderia ter usado o strrev(), mas devido ao compilador
 // foi necessário utilizar o reverse()
 
 #include <iostream>
