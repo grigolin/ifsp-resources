@@ -15,7 +15,15 @@ int main(){
     }
 
     // mostrar matriz
-    
+    for(l=0; l <6; l++){
+        for(i=0;i<3;i++){
+            for(j=0; j<3;j++){
+                cout << cubo[l][i][j] << "\t";
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
 
     return 0;
 }
