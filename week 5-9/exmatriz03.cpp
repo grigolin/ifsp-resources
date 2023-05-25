@@ -24,14 +24,18 @@ int main(){
     }
 
     int matrizresult[lin][col];
-    int k,p;
     for(i = 0; i < lin; i++){
-        for(j=0; j<col;j++){
-            matrizresult[k][p] = matriz1[i][j] + matriz2[i][j];
-            cout << matrizresult[k][p];
+        for(j = 0; j < col;j++){
+            matrizresult[i][j] = matriz1[i][j] + matriz2[i][j];
         }
         cout << endl;
     }
 
+    for(i = 0; i < lin; i++){
+        for(j = 0; j < col;j++){
+            cout << matrizresult[i][j] << '\t';
+        }
+        cout << endl;
+    }
     return 0;
 }
