@@ -10,11 +10,11 @@ void SwapNum(int &num1, int &num2){ // usando referência, sem ela a função Sw
 
 int main(){
     int x,y;
-    cout << "Digite 2 numeros: ";
+    cout << "Digite 2 números: ";
     cin >> x >> y;
     cout << "Voce digitou " << x << " e " << y << endl;
 
     SwapNum(x,y);
-    cout << "Numeros trocados, agora: " << x << " e " << y << endl;
+    cout << "Números trocados, agora: " << x << " e " << y << endl;
     return 0;
 }
