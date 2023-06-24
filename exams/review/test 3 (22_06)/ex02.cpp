@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     int num[8];
     int cont;
-    for(int i = 0; i < 8; i++){
+    for(int i = 0; i <8; i++){
         cout << "Digite o numero " << i+1 << endl;
         cin >> num[i];
         if(num[i] % 3 == 0){

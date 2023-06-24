@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     int num1[10], num2[10];
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i <10; i++)
     {
         cout << "Digite o numero " << i+1 << " do vetor 1" << endl;
         cin >> num1[i];
