@@ -1,43 +1,43 @@
 #include <iostream>
-#include <cstdlib>
+#include <string>
 using namespace std;
 
 int main() {
-    fflush(stdin);
     int npets;
     
     cout << "Quantos PETS deseja cadastrar? ";
     cin >> npets;
+    cin.ignore();
 
     struct StructPETs {
-        char nomeAnimal[40], nomeDono[40], especie[40], raca[40], sexo[15];
+        string nomeAnimal, nomeDono, especie, raca, sexo;
         int telefoneDono, RGdono, idadePET;
     } StructPET[npets];
 
     for (int i = 0; i < npets; i++) {
-        fflush(stdin);
-        cout << "Nome PET: " << endl;
-        cin.getline(StructPET[i].nomeAnimal, 40);
+        fflush(stdin);                         // this only works in netbeans (not portable)
+        cout << "Nome PET: " << endl;          // fflush shouldn't be used, since it is undefined behavior.
+        getline(cin, StructPET[i].nomeAnimal); // see: https://stackoverflow.com/questions/2979209/using-fflushstdin
         fflush(stdin);
         cout << "Especie PET: " << endl;
-        cin.getline(StructPET[i].especie, 40);
+        getline(cin, StructPET[i].especie);
         fflush(stdin);
         cout << "Raça PET: " << endl;
-        cin.getline(StructPET[i].raca, 40);
+        getline(cin, StructPET[i].raca);
         fflush(stdin);
         cout << "Sexo PET: " << endl;
-        cin.getline(StructPET[i].sexo, 40);
+        cin >> StructPET[i].sexo;
         fflush(stdin);
         cout << "Idade PET: " << endl;
         cin >> StructPET[i].idadePET;
         fflush(stdin);
         cout << "Nome Dono: " << endl;
-        cin.getline(StructPET[i].nomeDono, 40);
+        getline(cin, StructPET[i].nomeDono);
         fflush(stdin);
-        cout << "RG PET: " << endl;
+        cout << "RG Dono: " << endl;
         cin >> StructPET[i].RGdono;
         fflush(stdin);
-        cout << "Telefone PET: " << endl;
+        cout << "Telefone Dono: " << endl;
         cin >> StructPET[i].telefoneDono;
         fflush(stdin);
     }
@@ -57,3 +57,76 @@ int main() {
     };
     return 0;
 }
+/* this works
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Pet {
+    string nome;
+    string especie;
+    string raca;
+    string sexo;
+    int idade;
+    string nomeDono;
+    string rgDono;
+    string telefoneDono;
+};
+
+void mostrarCadastro(const Pet& pet);
+
+void cadastrarPet() {
+    Pet pet;
+
+    cout << "Nome do animal: ";
+    getline(cin, pet.nome);
+    cout << "Espécie: ";
+    getline(cin, pet.especie);
+    cout << "Raça: ";
+    getline(cin, pet.raca);
+    cout << "Sexo: ";
+    getline(cin, pet.sexo);
+    cout << "Idade: ";
+    cin >> pet.idade;
+    cin.ignore(); // Ignorar o caractere de nova linha deixado pelo cin
+    cout << "Nome do dono: ";
+    getline(cin, pet.nomeDono);
+    cout << "RG do dono: ";
+    getline(cin, pet.rgDono);
+    cout << "Telefone do dono: ";
+    getline(cin, pet.telefoneDono);
+
+    cout << endl;
+
+    cout << "Cadastro realizado:" << endl;
+    cout << "-------------------" << endl;
+    mostrarCadastro(pet);
+}
+
+void mostrarCadastro(const Pet& pet) {
+    cout << "Nome do animal: " << pet.nome << endl;
+    cout << "Espécie: " << pet.especie << endl;
+    cout << "Raça: " << pet.raca << endl;
+    cout << "Sexo: " << pet.sexo << endl;
+    cout << "Idade: " << pet.idade << " anos" << endl;
+    cout << "Nome do dono: " << pet.nomeDono << endl;
+    cout << "RG do dono: " << pet.rgDono << endl;
+    cout << "Telefone do dono: " << pet.telefoneDono << endl;
+    cout << endl;
+}
+
+int main() {
+    int numPets;
+    cout << "Digite o número de pets a cadastrar: ";
+    cin >> numPets;
+    cin.ignore(); // Ignorar o caractere de nova linha deixado pelo cin
+
+    for (int i = 0; i < numPets; i++) {
+        cout << "Cadastro do PET " << i + 1 << ":" << endl;
+        cadastrarPet();
+    }
+
+    return 0;
+}
+
+*/
