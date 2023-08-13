@@ -6,9 +6,9 @@
 class cMedia {
 public:
     void RecebeNotas();
-    float MediaAritmetica();
-    float MediaPonderada();
-    float MediaHarmonica();
+    float MediaAritmetica(int n1, int n2, int n3);
+    float MediaPonderada(int n1, int n2, int n3);
+    float MediaHarmonica(int n1, int n2, int n3);
     
     cMedia();
     cMedia(const cMedia& orig);
