@@ -26,12 +26,13 @@ void cAluno::ReceberDados() {
 }
 
 void cAluno::CalcularMedia() {
-    float soma;
+    float soma=0;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 2; j++) {
             soma += this->Array[i].nota[j];
         }
         this->Array[i].media = soma / 2;
+        soma=0;
     }
 }
 
