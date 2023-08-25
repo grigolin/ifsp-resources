@@ -50,7 +50,7 @@ void cAluno::ReceberDados(){
     }
 }
 
-int cAluno::Localizar(sAluno* vetor, int pesquisaCPF, int qnt){
+int cAluno::Localizar(sAluno* vetor, int pesquisaCPF, int qnt){ // pointer
     int i=0;
     while(i<qnt){
         if(pesquisaCPF == vetor[i].cpf){
