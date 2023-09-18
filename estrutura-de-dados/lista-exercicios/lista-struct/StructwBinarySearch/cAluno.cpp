@@ -73,7 +73,7 @@ void cAluno::lerDados(){
     
 }
 
-float cAluno::acharCPF_Sequencial(sDadosImc *vetPessoas, string cpf, int qnt){ //para receber os valores no método eu especifico o tipo
+float cAluno::acharCPF_Sequencial(sDadosImc *vetPessoas, string cpf, int qnt){ 
     int i=0;
     float imc;
 
@@ -86,7 +86,7 @@ float cAluno::acharCPF_Sequencial(sDadosImc *vetPessoas, string cpf, int qnt){ /
     return imc;
 }
 
-//ordenação método bolha, fiz por cpf pra binaria funcionar
+//bubble sort
 void cAluno::Ordenador(sDadosImc *vetPessoas, int qnt){
     int i=0, j=0;
     sDadosImc temp;
@@ -102,8 +102,7 @@ void cAluno::Ordenador(sDadosImc *vetPessoas, int qnt){
     }
 }
 
-float cAluno::acharCPF_Binaria(sDadosImc *vetPessoas, string cpf, int qnt){ //para receber os valores no método eu especifico o tipo
-	//A pesquisa binaria depois da primeira rodada, recalcula o meio e testa se o numero desejado ta pra frente ou para tras do novo meio
+float cAluno::acharCPF_Binaria(sDadosImc *vetPessoas, string cpf, int qnt){ 
 	this->Ordenador(vetPessoas, qnt);
 int inf,sup,meio;
     inf=0;
