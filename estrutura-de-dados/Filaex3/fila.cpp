@@ -21,7 +21,7 @@ void fila::inserir() {//ok
     cout << "Digite o elemento a inserir: ";
     cin>>x;
     
-    if (!this->pesquisar(x)){
+    if (!this->pesquisar(x)){ //se false, adiciona elemento (nao existe ainda)
         this->aux = (struct nodo *) malloc(sizeof (this->aux));
         aux->elem = x;
         aux->prox = NULL;
@@ -44,7 +44,7 @@ bool fila::pesquisar(int elem) { //ok
     
     while (this->aux != NULL) {
         if (this->aux->elem == elem) {
-            return true;
+            return true; // elemento ja existe 
         }
         this->aux = this->aux->prox;
     }
