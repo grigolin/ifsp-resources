@@ -1,0 +1,23 @@
+inicio.prox.prox = aux;
+fim.ant.ant = aux;
+aux.ant = inicio.prox
+aux.prox = fim.ant
+
+---
+remover um elemento qualquer da duplamente encadeada
+
+struct no* Deque::pesquisar(int chave){
+    for (aux=inicio; aux != NULL; aux=aux->prox){
+    if(aux->valor == chave)
+        return aux;    
+    }
+}
+return NULL;
+}
+
+void Deque::deletar(int chave){
+    aux= this->pesquisar(chave);
+    aux->ant->prox=aux->prox;
+    aux->prox->ant=aux->ant;
+    free(aux);
+}
