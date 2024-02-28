@@ -11,4 +11,11 @@
     7. [Provas e Exercícios](prog-estruturada/exams)
 
 * **2º semestre - Estrutura de Dados 1**
-    1. [Básico](estrutura-de-dados/basico)
+    1. [Pilha e Fila](estrutura-de-dados)
+    2. [Listas de Exercícios](estrutura-de-dados/lista-exercicios)
+
+* **2º semestre - Programação Orientada a Objetos**
+    1. [Exercícios](prog-orientada-objetos)
+
+* **3º semestre - Linguagem de Programação 1**
+    1. [Projetos](ling-prog-1)
