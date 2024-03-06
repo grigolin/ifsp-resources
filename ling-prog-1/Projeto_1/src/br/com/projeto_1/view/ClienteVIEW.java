@@ -1,28 +1,78 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.projeto_1.view;
+
 import java.awt.Dimension;
-/**
- *
- * @author Aluno
- */
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
+import br.com.projeto_1.dto.ClienteDTO;
+import br.com.projeto_1.ctr.ClienteCTR;
+
 public class ClienteVIEW extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form ClienteVIEW
-     */
+    private int gravar_alterar;
+    ClienteDTO clienteDTO = new ClienteDTO();
+    ClienteCTR clienteCTR = new ClienteCTR();
+
     public ClienteVIEW() {
         initComponents();
+        liberaCampos(false);
+        LiberaBotoes(true, false, false, false, true);
     }
 
-    public void setPosicao(){
+    public void setPosicao() {
         Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) /2, (d.height - this.getSize().height) /2);
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
+    }
+
+    private void liberaCampos(boolean a) {
+        nome_cli.setEnabled(a);
+        logradouro_cli.setEnabled(a);
+        numero_cli.setEnabled(a);
+        bairro_cli.setEnabled(a);
+        cidade_cli.setEnabled(a);
+        estado_cli.setEnabled(a);
+        cep_cli.setEnabled(a);
+        cpf_cli.setEnabled(a);
+        rg_cli.setEnabled(a);
+    }
+
+    private void limpaCampos() {
+        nome_cli.setText("");
+        logradouro_cli.setText("");
+        numero_cli.setText("");
+        bairro_cli.setText("");
+        cidade_cli.setText("");
+        cep_cli.setText("");
+        cpf_cli.setText("");
+        rg_cli.setText("");
+    }
+
+    private void LiberaBotoes(boolean a, boolean b, boolean c, boolean d, boolean e) {
+        btnNovo.setEnabled(a);
+        btnSalvar.setEnabled(b);
+        btnCancelar.setEnabled(c);
+        btnExcluir.setEnabled(d);
+        btnSair.setEnabled(e);
     }
     
+    private void gravar(){
+        try{
+            clienteDTO.setNome_cli(nome_cli.getText());
+            clienteDTO.setLogradouro_cli(logradouro_cli.getText());
+            clienteDTO.setNumero_cli(Integer.parseInt(numero_cli.getText()));
+            clienteDTO.setBairro_cli(bairro_cli.getText());
+            clienteDTO.setCidade_cli(cidade_cli.getText());
+            clienteDTO.setEstado_cli(estado_cli.getSelectedItem().toString());
+            clienteDTO.setCep_cli(cep_cli.getText());
+            clienteDTO.setCpf_cli(cpf_cli.getText());
+            clienteDTO.setRg_cli(rg_cli.getText());
+            JOptionPane.showMessageDialog(null, clienteCTR.inserirCliente(clienteDTO));
+        }
+        catch(Exception e){
+            System.out.println("erro ao gravar " + e.getMessage());
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -76,8 +126,18 @@ public class ClienteVIEW extends javax.swing.JInternalFrame {
         jLabel10.setText("RG:");
 
         btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
 
@@ -192,6 +252,22 @@ public class ClienteVIEW extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        liberaCampos(true);
+        LiberaBotoes(false, true, true, false, true);
+        gravar_alterar = 1;
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if (gravar_alterar==1){
+            gravar();
+            gravar_alterar=0;
+        }
+        limpaCampos();
+        liberaCampos(false);
+        LiberaBotoes(true, false, false, false, true);
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
