@@ -10,6 +10,7 @@ public class PrincipalVIEW extends javax.swing.JFrame {
     public PrincipalVIEW() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setSize(850, 700);
     }
 
     @SuppressWarnings("unchecked")

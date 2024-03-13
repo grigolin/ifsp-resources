@@ -24,15 +24,40 @@ public class ClienteCTR {
             return "Cliente não cadastrado";
         }
     }
-    
-    public ResultSet consultarCliente(ClienteDTO clienteDTO, int opcao){
+
+    public ResultSet consultarCliente(ClienteDTO clienteDTO, int opcao) {
         ResultSet rs = clienteDAO.consultarCliente(clienteDTO, opcao);
         return rs;
     }
-    
-    public void CloseDB(){
+
+    public String alterarCliente(ClienteDTO clienteDTO) {
+        try {
+            if (clienteDAO.alterarCliente(clienteDTO)) {
+                return "Cliente alterado com sucesso! ";
+            } else {
+                return "Cliente não alterado";
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return "Cliente não alterado";
+        }
+    }
+
+    public String excluirCliente(ClienteDTO clienteDTO) {
+        try {
+            if (clienteDAO.excluirCliente(clienteDTO)) {
+                return "Cliente excluido com sucesso! ";
+            } else {
+                return "Cliente não excluido";
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return "Cliente não excluido";
+        }
+    }
+
+    public void CloseDB() {
         ConexaoDAO.CloseDB();
     }
-    
-    
+
 }
