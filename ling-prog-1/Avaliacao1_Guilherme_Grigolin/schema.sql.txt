@@ -1,0 +1,31 @@
+CREATE TABLE livro (
+	id_livro serial,
+	cod_livro varchar(8),
+	nome varchar(50), 
+	editora varchar(50),
+	autor varchar(50),
+	idioma varchar(30),
+	descricao varchar(70),
+	preco decimal,
+	CONSTRAINT livro_pkey PRIMARY KEY (id_livro),
+	CONSTRAINT livro_cod_key UNIQUE (cod_livro)
+)
+
+---
+
+INSERT INTO livro (cod_livro, nome, editora, autor, idioma, descricao, preco) 
+VALUES ('37653453', 'Crime e Castigo', 'Editora A', 'Fiódor Dostoiévski', 'Português', 'Livro que explora as complexidades da moralidade e do crime', 35.00),
+       ('04320241', 'Os Irmãos Karamazov', 'Editora B', 'Fiódor Dostoiévski', 'Português', 'Clássico da literatura russa que aborda temas familiares e filosóficos', 40.00),
+       ('09567034', 'Memórias do Subsolo', 'Editora C', 'Fiódor Dostoiévski', 'Português', 'Livro que analisa a psicologia de um homem alienado da sociedade', 30.00);
+
+INSERT INTO livro (cod_livro, nome, editora, autor, idioma, descricao, preco) 
+VALUES ('12345678', 'Dom Casmurro', 'Editora A', 'Machado de Assis', 'Português', 'Um dos grandes clássicos da literatura brasileira', 25.00);
+
+INSERT INTO livro (cod_livro, nome, editora, autor, idioma, descricao, preco) 
+VALUES ('23456789', '1984', 'Editora B', 'George Orwell', 'Inglês', 'Uma distopia que retrata um regime totalitário', 30.00);
+
+INSERT INTO livro (cod_livro, nome, editora, autor, idioma, descricao, preco) 
+VALUES ('34567890', 'Cem Anos de Solidão', 'Editora C', 'Gabriel García Márquez', 'Espanhol', 'Um clássico da literatura latino-americana', 28.50);
+
+INSERT INTO livro (cod_livro, nome, editora, autor, idioma, descricao, preco) 
+VALUES ('45678901', 'A Menina que Roubava Livros', 'Editora D', 'Markus Zusak', 'Português', 'Uma história emocionante narrada pela Morte', 22.00);
