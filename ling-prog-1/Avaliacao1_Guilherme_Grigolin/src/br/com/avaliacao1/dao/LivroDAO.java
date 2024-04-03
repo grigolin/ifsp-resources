@@ -64,15 +64,16 @@ public class LivroDAO {
         try {
             ConexaoDAO.ConnectDB();
             pstmt = ConexaoDAO.con.prepareStatement("update livro set "
-                    + "cod_livro = ?, nome = ?, editora = ?, autor = ?, idioma = ?, descricao = ?, preco = ?;");
+                    + "nome = ?, editora = ?, autor = ?, idioma = ?, descricao = ?, preco = ? where cod_livro = ?;");
 
-            pstmt.setString(1, livroDTO.getCod_livro());
-            pstmt.setString(2, livroDTO.getNome());
-            pstmt.setString(3, livroDTO.getEditora());
-            pstmt.setString(4, livroDTO.getAutor());
-            pstmt.setString(5, livroDTO.getIdioma());
-            pstmt.setString(6, livroDTO.getDescricao());
-            pstmt.setFloat(7, livroDTO.getPreco());
+            
+            pstmt.setString(1, livroDTO.getNome());
+            pstmt.setString(2, livroDTO.getEditora());
+            pstmt.setString(3, livroDTO.getAutor());
+            pstmt.setString(4, livroDTO.getIdioma());
+            pstmt.setString(5, livroDTO.getDescricao());
+            pstmt.setFloat(6, livroDTO.getPreco());
+            pstmt.setString(7, livroDTO.getCod_livro());
             pstmt.execute();
             ConexaoDAO.con.commit();
             pstmt.close();
