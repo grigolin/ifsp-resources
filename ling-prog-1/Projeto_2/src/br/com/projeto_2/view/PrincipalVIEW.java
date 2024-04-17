@@ -6,6 +6,9 @@
 package br.com.projeto_2.view;
 
 import javax.swing.JOptionPane;
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -29,7 +32,13 @@ public class PrincipalVIEW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
+        ImageIcon imageicon = new ImageIcon(getClass().getResource("imagens/tela_inicial.jpg"));
+        Image image = imageicon.getImage();
+        desktopPane = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics graphics){
+                graphics.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
         menuBar = new javax.swing.JMenuBar();
         menuCadastro = new javax.swing.JMenu();
         itemMenuFornecedor = new javax.swing.JMenuItem();
@@ -52,6 +61,11 @@ public class PrincipalVIEW extends javax.swing.JFrame {
 
         itemMenuProduto.setMnemonic('s');
         itemMenuProduto.setText("Produto");
+        itemMenuProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuProdutoActionPerformed(evt);
+            }
+        });
         menuCadastro.add(itemMenuProduto);
 
         menuBar.add(menuCadastro);
@@ -82,7 +96,7 @@ public class PrincipalVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemMenuFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuFornecedorActionPerformed
-        // TODO add your handling code here:
+        abreFornecedorVIEW();
     }//GEN-LAST:event_itemMenuFornecedorActionPerformed
 
     private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
@@ -93,9 +107,25 @@ public class PrincipalVIEW extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menuSairMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void itemMenuProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuProdutoActionPerformed
+        abreProdutoVIEW();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemMenuProdutoActionPerformed
+
+    private void abreFornecedorVIEW() {
+        FornecedorVIEW fornecedorVIEW = new FornecedorVIEW();
+        this.desktopPane.add(fornecedorVIEW);
+        fornecedorVIEW.setVisible(true);
+        fornecedorVIEW.setPosicao();
+    }
+
+    private void abreProdutoVIEW() {
+        ProdutoVIEW produtoVIEW = new ProdutoVIEW();
+        this.desktopPane.add(produtoVIEW);
+        produtoVIEW.setVisible(true);
+        produtoVIEW.setPosicao();
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
