@@ -1,3 +1,6 @@
+--- NxN cliente livro
+--- 1xN cliente editora
+
 CREATE TABLE cliente
 (
 	id_cli serial,
@@ -10,7 +13,9 @@ CREATE TABLE cliente
 	cpf_cli varchar(14),
 	rg_cli varchar(15), 
 	numero_cli integer,
+	id_editora integer,
 	CONSTRAINT cliente_pkey PRIMARY KEY (id_cli),
+	CONSTRAINT cliente_id_editora FOREIGN KEY (id_editora) REFERENCES editora (id_editora) --- 
 	CONSTRAINT cliente_cpf_key UNIQUE (cpf_cli)
 );
 
@@ -37,12 +42,12 @@ CREATE TABLE emprestimo(
 );
 
 CREATE TABLE editora(
-id_editora serial,
-nome_editora text,
-cnpj_editora varchar(14),
-sede_editora text,
-CONSTRAINT editora_pkey PRIMARY KEY(id_editora),
-CONSTRAINT editora_cnpj_key UNIQUE (cnpj_editora)
+	id_editora serial,
+	nome_editora text,
+	cnpj_editora varchar(14),
+	sede_editora text,
+	CONSTRAINT editora_pkey PRIMARY KEY(id_editora),
+	CONSTRAINT editora_cnpj_key UNIQUE (cnpj_editora)
 );
 
 CREATE TABLE bibliotecario (
