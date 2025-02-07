@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Conteúdo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .navbar {
+            background-color: #A9C3DB;
+            padding: 10px;
+            text-align: right;
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .search-section {
+            background: url('circuit.jpg') no-repeat center center;
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: orange;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .search-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            font-size: 18px;
+            width: 300px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: left;
+            padding: 20px;
+        }
+        a {
+            color: purple;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .highlight {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+        li {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Início</a>
+        <a href="#">Busca</a>
+        <a href="./ex03_0702.html">Formulário/Tabela</a>
+        <a href="#">Postagem c/ imagem</a>
+    </div>
+    <div class="search-section">
+        <div>Busca de conteúdo</div>
+        <input type="text" class="search-box" placeholder="Digite para buscar">
+        <button>Pesquisar</button>
+    </div>
+    <div class="content">
+        <ul>
+            <li><a href="#">Sobre mim</a></li>
+            <li><a href="https://www.ifsp.edu.br/" target="_blank">Site do <span class="highlight">IFSP Campus Votuporanga</span></a> <em>(nova aba)</em></li>
+            <li><a href="https://www.ifsp.edu.br/" target="_blank">PPC Atualizado do Curso de BSI</a> <em>(nova aba)</em></li>
+        </ul>
+    </div>
+</body>
+</html>
+
