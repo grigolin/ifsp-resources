@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        a {
+            color: purple;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 5px 0 20px 0;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+        .table-title {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        /* Estilo 1 - alternating pattern */
+        .estilo1 tr:nth-child(odd) td {
+            background-color: white;
+        }
+        .estilo1 tr:nth-child(even) td {
+            background-color: #00FF00;
+        }
+        /* Cor verde mais escura na primeira linha */
+        .estilo1 tr:first-child td {
+            background-color: #008000;
+        }
+        
+        /* Estilo 2 - alternating pattern */
+        .estilo2 tr:nth-child(odd) td {
+            background-color: #A9A9A9;
+            color: white;
+        }
+        .estilo2 tr:nth-child(even) td {
+            background-color: #000000;
+            color: white;
+        }
+        /* Cor verde mais escura na primeira linha */
+        .estilo2 tr:first-child td {
+            background-color: #006400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Praticando 4 - Primeiro contato com CSS</h1>
+    
+    <a href="menu.html">Voltar ao menu principal</a>
+
+    <h2>Estilo 1</h2>
+    <div class="table-title">Tabela 5x4</div>
+    <table class="estilo1">
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+    </table>
+
+    <h2>Estilo 2</h2>
+    <div class="table-title">Tabela 5x4</div>
+    <table class="estilo2">
+        <tr>
+            <td class="prim">Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+            <td>Lorem Ipsum</td>
+        </tr>
+    </table>
+</body>
+</html>
+

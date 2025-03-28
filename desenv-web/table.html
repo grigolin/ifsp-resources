@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table, td {
+            border: solid 1px red;
+        }
+        td {
+            padding: 30px 60px;
+            text-align: center;
+        }
+    </style>
+    
+    <h1>Praticando 2 - Tabelas com colspan e rowspan</h1>
+    <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, td {
+            border: solid red 1px;
+        }
+        td {
+            padding: 30px 60px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h3>Tabela com colspan</h3>
+            <table>
+                <tr>
+                    <td colspan="3">Colspan</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h3>Tabela com rowspan</h3>
+            <table>
+                <tr>
+                    <td>-</td>
+                    <td rowspan="3">Rowspan</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h3>Tabela com colspan e rowspan</h3>
+            <table>
+                <tr>
+                    <td colspan="2">Colspan</td>
+                    <td>-</td>
+                    <td rowspan="4">Rowspan</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Colspan</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

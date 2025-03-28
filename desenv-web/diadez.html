@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 1 - Seções e containers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #d3d3d3;
+        }
+
+        h1 {
+            color: #228B22;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 1px;
+            padding: 1px;
+            line-height: 1.6;
+        }
+
+        .highlight-blue {
+            background-color: #add8e6;
+        }
+
+        .highlight-coral {
+            background-color: #ffa07a;
+        }
+
+        .blue-text {
+            color: blue;
+        }
+
+        .red-text {
+            color: red;
+        }
+
+        .blue-highlight {
+            background-color: #0000ff;
+            color: white;
+        }
+
+        .red-highlight {
+            background-color: #ff0000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Praticando 1 - Seções e containers</h1>
+
+    <div class="section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="blue-highlight">Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at?</span> Ducimus hic explicabo tenetur deleniti debitis aut deserunt consequuntur animi! Laborum, minima odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis laudantium facere, unde suscipit minus officiis omnis molestas ullam corporis quae minima incidunt perferendis ipsum qui alias?</p>
+    </div>
+
+    <div class="section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at? Ducimus hic explicabo tenetur deleniti debitis aut deserunt consequuntur animi! Laborum, minima odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis laudantium facere, unde suscipit minus officiis omnis molestas ullam corporis quae minima incidunt perferendis ipsum qui alias?</p>
+    </div>
+
+    <div class="section highlight-blue">
+        <p>Lorem ipsum dolor sit amet consectetur <span class="red-text">adipisicing</span> elit. Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at? Ducimus hic explicabo tenetur deleniti debitis aut deserunt consequuntur animi! <span class="red-text">Laborum</span>, minima odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis <span class="red-text">laudantium</span> facere, unde suscipit minus officiis omnis molestas ullam corporis quae <span class="red-text">minima</span> incidunt perferendis ipsum qui alias?</p>
+        <p>Lorem ipsum dolor sit amet <span class="red-text">consectetur</span> adipisicing elit. Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at? <span class="red-text">Ducimus hic</span> explicabo tenetur deleniti debitis aut deserunt consequuntur animi! Laborum, minima odio! <span class="red-text">Lorem ipsum</span> dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis laudantium facere, unde suscipit minus officiis omnis molestas ullam corporis quae minima incidunt perferendis ipsum qui alias?</p>
+    </div>
+
+    <div class="section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="red-highlight">Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at?</span> Ducimus hic explicabo tenetur deleniti debitis aut deserunt consequuntur animi! Laborum, minima odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis laudantium facere, unde suscipit minus officiis omnis molestas ullam corporis quae minima incidunt perferendis ipsum qui alias?</p>
+    </div>
+
+    <div class="section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at? Ducimus hic explicabo tenetur deleniti debitis aut deserunt consequuntur animi! Laborum, minima odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis laudantium facere, unde suscipit minus officiis omnis molestas ullam corporis quae minima incidunt perferendis ipsum qui alias?</p>
+    </div>
+
+    <div class="section highlight-coral">
+        <p>Lorem ipsum dolor sit amet consectetur <span class="red-text">adipisicing</span> elit. Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at? Ducimus hic explicabo tenetur deleniti debitis aut deserunt consequuntur animi! <span class="blue-text">Laborum</span>, minima odio! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis <span class="blue-text">laudantium</span> facere, unde suscipit minus officiis omnis molestas ullam corporis quae <span class="blue-text">minima</span> incidunt perferendis ipsum qui alias?</p>
+        <p>Lorem ipsum dolor sit amet <span class="red-text">consectetur</span> adipisicing elit. Quidem modi assumenda necessitatibus consequatur cum ipsum pariatur at? <span class="red-text">Ducimus hic</span> explicabo tenetur deleniti debitis aut deserunt consequuntur animi! Laborum, minima odio! <span class="blue-text">Lorem ipsum</span> dolor sit amet consectetur adipisicing elit. Iure, maxime nostrum culpa debitis laudantium facere, unde suscipit minus officiis omnis molestas ullam corporis quae minima incidunt perferendis ipsum qui alias?</p>
+    </div>
+</body>
+</html>

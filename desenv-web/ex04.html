@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Praticando 4 - Primeiro contato com CSS</title>
+	<style>
+		table,
+		td,
+		tr {
+			border: 1px solid black;
+		}
+
+		td {
+			padding: 8px;
+		}
+
+		.linha-verde>td {
+			background-color: green;
+		}
+
+		.linha-verde-claro>td {
+			background-color: #c2fac2;
+		}
+
+		.linha-cinza-claro>td {
+			background-color: #b3b5b5;
+			color: white;
+		}
+
+		.linha-cinza-escuro>td {
+			background-color: #676767;
+			color: white;
+		}
+
+		.linha-preta>td {
+			background-color: black;
+			color: white;
+		}
+
+		.linha-preta,
+		.linha-cinza-claro,
+		.linha-cinza-escuro {
+			border: 5px solid black;
+		}
+
+		#tabela2,
+		td,
+		tr {
+			border-collapse: collapse;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1>Praticando 4 - Primeiro contato com CSS</h1>
+	<a href="index.html">Voltar ao menu principal</a>
+	<h3>Estilo 1</h3>
+	<table id="tabela1">
+		<caption>Tabela 5x4</caption>
+		<tr class="linha-verde">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr class="linha-verde-claro">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr class="linha-verde-claro">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+
+	</table>
+
+	<h3>Estilo 2</h3>
+	<table id="tabela2">
+		<caption>Tabela 5x4</caption>
+		<tr class="linha-cinza-escuro">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr class="linha-preta">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr class="linha-cinza-claro">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr class="linha-preta">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+		<tr class="linha-cinza-claro">
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+			<td>Lorem Ipsum</td>
+		</tr>
+
+	</table>
+
+
+</body>
+
+</html>

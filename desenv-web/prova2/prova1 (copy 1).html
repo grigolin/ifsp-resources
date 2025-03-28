@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1</title>
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.container {
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.controls div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls input {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.box {
+  width: 40vw;
+  height: 40vh;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box p {
+  font-size: 24px;
+  margin: 0;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  display: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exercício 1</h1>
+    <div class="controls">
+      <div>
+        <input type="number" id="width" step="0.1" value="40">
+        <label>vw</label>
+      </div>
+      <div>
+        <input type="number" id="height" step="0.1" value="40">
+        <label>vh</label>
+      </div>
+    </div>
+    <div class="box" id="box">
+      <p>Lorem ipsum</p>
+    </div>
+    <p id="message"></p>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const widthInput = document.getElementById("width");
+  const heightInput = document.getElementById("height");
+  const box = document.getElementById("box");
+  const message = document.getElementById("message");
+
+  function updateBox() {
+    const width = parseFloat(widthInput.value);
+    const height = parseFloat(heightInput.value);
+
+    
+    box.style.width = `${width}vw`;
+    box.style.height = `${height}vh`;
+
+    const widthPixels = (width / 100) * window.innerWidth;
+    const heightPixels = (height / 100) * window.innerHeight;
+
+    if (Math.abs(widthPixels - heightPixels) <= 0.05 * Math.max(widthPixels, heightPixels)) {
+      message.textContent = "É Quadrado!";
+      message.style.display = "block";
+      box.style.backgroundColor = "#90EE90"; 
+    } else {
+      message.textContent = "";
+      message.style.display = "none";
+      box.style.backgroundColor = "transparent";
+    }
+  }
+
+  widthInput.addEventListener("input", updateBox);
+  heightInput.addEventListener("input", updateBox);
+});
+
+  </script>
+</body>
+</html>
+

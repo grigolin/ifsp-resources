@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercicio 1- Só HTML</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+      incidunt odit odio sequi fuga voluptatibus eaque blanditiis laudantium
+      quibusdam? Sunt sit molestias et libero blanditiis voluptate iste, error
+      saepe rem
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat sint
+      perspiciatis dolores, consequuntur provident possimus repudiandae harum
+      nam esse quae, quos cumque? Ducimus maiores itaque eius nobis ea quam!
+    </p>
+    <h2>Link para o Moodle VTP:</h2>
+    <a href="https://ead.vtp.ifsp.edu.br/">https://ead.vtp.ifsp.edu.br/</a>
+    <h2>Link para o SUAP:</h2>
+    <a href="https://suap.ifsp.edu.br/">https://suap.ifsp.edu.br/</a>
+    <h2>O Elemento "&lt;del>"</h2>
+    <p>
+      O elemento &lt;del> (ou Elemento HTML de Texto Excluido) representa uma
+      parte do texto que foi excluído do documento. Este elemento (não
+      necessariamente) é renderizado com uma linha entre o texto.
+    </p>
+    <p>
+        Exemplo: <del>texto excluído</del>
+    </p>
+    <h2>Uma imagem de um gato</h2>
+    <img
+      src="https://s2.ppllstatics.com/lasprovincias/www/multimedia/202112/04/media/cortadas/GF0RO0L1-kQJH-U1601666042762sF-1248x770@Las%20Provincias.jpg"
+      alt="Gato"
+      style="width: 400px; height: 200px;"
+    />
+    <p>um gato domestico (Felis catus)</p>
+    <h2>Cinco frutas que eu gosto:</h2>
+    <ul>
+      <li>Maçã</li>
+      <li>Uva</li>
+      <li>Morango</li>
+      <li>Abacaxi</li>
+      <li>Melancia</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<doctype html>
+    <html>
+
+    <head>
+        <title>Praticando 2 - Formulário HTML Estilizado</title>
+        <style>
+            body {
+                background: linear-gradient(to bottom, #006E6E, #00A600);
+                font-family: Arial, sans-serif;
+                color: white;
+            }
+
+            .form-container {
+                padding: 20px;
+                border-radius: 10px;
+                max-width: 600px;
+                margin: 50px auto;
+            }
+
+            
+
+            button {
+                background-color: #008000;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #00A600;
+            }
+
+            .language-icons {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .language-icons img {
+                width: 50px;
+                margin: 0 10px;
+            }
+
+            .movie-list {
+                margin-top: 20px;
+            }
+
+            .movie-list label {
+                display: block;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="form-container">
+            <h1>Praticando 2 - Formulário HTML Estilizado</h1>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Eder">
+                <br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.aqui">
+                <br>
+                <label for="car-brand">Marca de carro preferida:</label>
+                <select id="car-brand" name="car-brand">
+                    <option value="Chevrolet">Chevrolet</option>
+                </select>
+                <br>
+                <label for="observations">Observações:</label>
+                <textarea id="observations" name="observations"></textarea>
+                <br>
+                <div class="language-icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                        alt="HTML5 logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                        alt="CSS3 logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript logo">
+                </div>
+                <br>
+                <div class="movie-list">
+                    <label>
+                        <input type="checkbox" name="movies[]" value="o-auto-da-compadecida-2"> O Auto da Compadecida 2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="movies[]" value="avatar-3-fogo-e-cinzas"> Avatar 3: Fogo e Cinzas
+                    </label>
+                    <label>
+                        <input type="checkbox" name="movies[]" value="capitao-america-admirable-mundo-novo"> Capitão
+                        América: Admirável Mundo Novo
+                    </label>
+                    <label>
+                        <input type="checkbox" name="movies[]" value="the-kong-dynasty"> Avengers: The Kong Dynasty
+                    </label>
+                    <label>
+                        <input type="checkbox" name="movies[]" value="o-auto-da-compadecida-2"> O Auto da Compadecida 2
+                    </label>
+                    <label>
+                        <input type="checkbox" name="movies[]" value="avatar-3-fogo-e-cinzas"> Avatar 3: Fogo e Cinzas
+                    </label>
+                </div>
+                <br>
+                <div style="text-align: center; margin-top: 20px;">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+    </html>

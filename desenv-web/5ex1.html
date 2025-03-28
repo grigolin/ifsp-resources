@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praticando 1 - Manipulações</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      .menu {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+      .menu div {
+        display: flex;
+        align-items: center;
+      }
+      .menu h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .menu button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .menu button.active {
+        background-color: #0056b3;
+      }
+      .menu button:hover {
+        background-color: #0056b3;
+      }
+      #content {
+        text-align: left;
+        margin: auto;
+        width: 80%;
+      }
+      img {
+        width: 150px;
+        height: auto;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Praticando 1 - Manipulações</h1>
+    <div class="menu">
+      <!-- Lado -->
+      <div>
+        <h2>Lado</h2>
+        <button id="leftBtn" class="active" onclick="setAlignment('left')">
+          Esquerdo
+        </button>
+        <button id="rightBtn" onclick="setAlignment('right')">Direito</button>
+      </div>
+      <!-- Parágrafos -->
+      <div>
+        <h2>Parágrafos</h2>
+        <button onclick="addParagraph()">Adicionar</button>
+        <button onclick="removeFirstParagraph()">Remover primeiro</button>
+        <button onclick="removeLastParagraph()">Remover último</button>
+        <button onclick="removeAllParagraphs()">Remover todos</button>
+      </div>
+      <!-- Imagens -->
+      <div>
+        <h2>Imagens</h2>
+        <button onclick="addImage()">Adicionar</button>
+        <button onclick="removeImage()">Remover uma</button>
+        <button onclick="removeAllImages()">Remover todas</button>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="paragraphs"></div>
+      <div id="images"></div>
+    </div>
+
+    <script>
+      let paragraphCount = 0;
+      let alignment = "left";
+
+      function setAlignment(side) {
+        alignment = side;
+
+        // Atualiza estilo de alinhamento
+        const content = document.getElementById("content");
+        content.style.textAlign = alignment;
+
+        // Atualiza botões ativos
+        document
+          .getElementById("leftBtn")
+          .classList.toggle("active", side === "left");
+        document
+          .getElementById("rightBtn")
+          .classList.toggle("active", side === "right");
+      }
+
+      // Funções para manipular parágrafos
+      function addParagraph() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        const p = document.createElement("p");
+        p.textContent = #${paragraphCount} - Lorem ipsum dolor sit amet, consectetur adipisicing elit.;
+        paragraphsDiv.appendChild(p);
+        paragraphCount++;
+      }
+
+      function removeFirstParagraph() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        if (paragraphsDiv.firstChild) {
+          paragraphsDiv.removeChild(paragraphsDiv.firstChild);
+        }
+      }
+
+      function removeLastParagraph() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        if (paragraphsDiv.lastChild) {
+          paragraphsDiv.removeChild(paragraphsDiv.lastChild);
+        }
+      }
+
+      function removeAllParagraphs() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        paragraphsDiv.innerHTML = "";
+        paragraphCount = 0;
+      }
+
+      // Funções para manipular imagens
+      function addImage() {
+        const imagesDiv = document.getElementById("images");
+        const img = document.createElement("img");
+        img.src =
+          "https://f.i.uol.com.br/fotografia/2022/07/04/165695642962c3260deeeb3_1656956429_3x4_md.jpg";
+        imagesDiv.appendChild(img);
+      }
+
+      function removeImage() {
+        const imagesDiv = document.getElementById("images");
+        if (imagesDiv.lastChild) {
+          imagesDiv.removeChild(imagesDiv.lastChild);
+        }
+      }
+
+      function removeAllImages() {
+        const imagesDiv = document.getElementById("images");
+        imagesDiv.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - HTML e CSS</title>
+    <style>
+        body {
+            background-color: #f0f7d4;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #000000;
+            padding: 20px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            background-color: #f8f8f8;
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #d3d3d3;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .header-cell {
+            background-color: #d3d3d3;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .fruit-image-right {
+            max-width: 300px;
+            background-color: #ffffff;
+        }
+
+        .fruit-section {
+            width: 70%;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #9dd3f7;
+            border: 3px solid #eac739;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-sizing: border-box;
+        }
+
+        .fruit-section img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .fruit-section h2 {
+            font-size: 20px;
+            color: #0066cc;
+            margin: 0;
+        }
+
+        .fruit-section p {
+            font-size: 16px;
+            color: #000000;
+            margin: 5px 0;
+        }
+
+        .fruit-section a {
+            color: #0000ee;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercício 2 - HTML e CSS</h1>
+
+    <div class="content-container">
+        <table>
+            <tr>
+                <th class="header-cell" rowspan="2">Fruta</th>
+                <th class="header-cell" colspan="4">Informações sobre as Frutas</th>
+            </tr>
+            <tr>
+                <th>Tipo (Variedades Comuns)</th>
+                <th>Sabor</th>
+                <th>Principais Nutrientes</th>
+                <th>Uso Culinário</th>
+            </tr>
+            <tr>
+                <td>Manga</td>
+                <td>Tommy, Palmer, Rosa, Haden</td>
+                <td rowspan="3">Doce</td>
+                <td>Vitamina C, fibras, betacaroteno</td>
+                <td>Consumo in natura, sucos, sobremesas</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>Nanica, Prata, Maçã, Ouro</td>
+                
+                <td>Potássio, vitamina B6, fibras</td>
+                <td>In natura, vitaminas, bolos</td>
+            </tr>
+            <tr>
+                <td>Maçã</td>
+                <td>Gala, Fuji, Verde, Red</td>
+                
+                <td>Fibras, vitamina C, antioxidantes</td>
+                <td>In natura, saladas, sobremesas</td>
+            </tr>
+            <tr>
+                <td>Abacaxi</td>
+                <td>Pérola, Havaí</td>
+                <td rowspan="2">Ácido/Azedas</td>
+                <td>Vitamina C, bromelina, manganês</td>
+                <td>Sucos, sobremesas, grelhado</td>
+            </tr>
+            <tr>
+                <td>Limão</td>
+                <td>Taiti, Siciliano, Cravo</td>
+                
+                <td>Vitamina C, antioxidantes, potássio</td>
+                <td>Sucos, temperos, sobremesas</td>
+            </tr>
+        </table>
+
+        <img src="https://static.biologianet.com/conteudo/images/no-abacaxi-parte-comestivel-fruta-desenvolveu-se-diversas-pecas-florais-os-frutos-sao-cada-escama-casca-58f62e2a3fdfd.jpg"
+            alt="Frutas" class="fruit-image-right">
+    </div>
+
+
+
+    <div class="fruit-section">
+
+        <div>
+            <h2>Manga</h2>
+            <p>A <mark>manga</mark> é uma fruta tropical muito popular em diversas regiões do mundo, especialmente no
+                Brasil. Possui uma casca fina e geralmente de cor verde-amarelada ou vermelha, com uma polpa doce e
+                suculenta de
+                coloração laranja a doce. Ela é rica em vitamina C, betacaroteno (precursor da vitamina A) e fibras,
+                sendo
+                excelente para fortalecer o sistema imunológico e melhorar a digestão. A manga é consumida tanto in
+                natura como
+                em sucos, sobremesas, chutneys, saladas e até em pratos salgados.</p>
+        </div>
+        <img src="https://static.biologianet.com/conteudo/images/no-abacaxi-parte-comestivel-fruta-desenvolveu-se-diversas-pecas-florais-os-frutos-sao-cada-escama-casca-58f62e2a3fdfd.jpg"
+            alt="Manga">
+    </div>
+
+    <div class="fruit-section">
+        <img src="https://static.biologianet.com/conteudo/images/no-abacaxi-parte-comestivel-fruta-desenvolveu-se-diversas-pecas-florais-os-frutos-sao-cada-escama-casca-58f62e2a3fdfd.jpg"
+            alt="Banana">
+        <div>
+            <h2>Banana</h2>
+            <p>A <mark>banana</mark> é uma fruta tropical que cresce em cachos, com casca amarela, verde ou vermelha,
+                dependendo da variedade. A banana é conhecida por seu sabor doce e macio, sendo uma das frutas mais
+                consumidas
+                no Brasil e no mundo. Ela é uma ótima fonte de potássio, vitamina B6 e fibras, sendo muito recomendada
+                para a
+                reposição de energia, principalmente após atividades físicas. As bananas podem ser consumidas cruas, em
+                vitaminas, bolos, fritas e até assadas.</p>
+        </div>
+    </div>
+
+    <div class="fruit-section">
+
+        <div>
+            <h2>Maçã</h2>
+            <p>A <mark>maca</mark> é uma fruta de casca fina e crocante, que pode ser encontrada em uma variedade de
+                cores,
+                como verde, vermelha e amarela. O sabor da maçã pode variar de doce a ácido, dependendo da variedade.
+                Ela é rica
+                em fibras, vitamina C e antioxidantes, o que a torna excelente para melhorar a digestão e ajudar a
+                fortalecer o
+                sistema imunológico. Além disso, a maçã é conhecida por seus benefícios para a saúde cardiovascular. É
+                consumida
+                tanto in natura quanto em sucos, saladas, bolos e compotas.</p>
+        </div>
+        <img src="https://static.biologianet.com/conteudo/images/no-abacaxi-parte-comestivel-fruta-desenvolveu-se-diversas-pecas-florais-os-frutos-sao-cada-escama-casca-58f62e2a3fdfd.jpg"
+            alt="Maçã">
+    </div>
+
+    <div class="fruit-section">
+        <img src="https://static.biologianet.com/conteudo/images/no-abacaxi-parte-comestivel-fruta-desenvolveu-se-diversas-pecas-florais-os-frutos-sao-cada-escama-casca-58f62e2a3fdfd.jpg"
+            alt="Abacaxi">
+        <div>
+            <h2>Abacaxi</h2>
+            <p>O <mark>abacaxi</mark>, também conhecido como pineapple em inglês, é uma fruta tropical que possui uma
+                casca
+                espinhosa e grossa, com uma polpa suculenta, doce e ácida. Ele é uma excelente fonte de vitamina C e
+                bromelina,
+                uma enzima que auxilia na digestão. O abacaxi é muito utilizado em sucos, sobremesas, grelhados e até em
+                pratos
+                salgados. Seu sabor refrescante o torna uma ótima opção para combater o calor.</p>
+        </div>
+    </div>
+
+    <div class="fruit-section">
+
+        <div>
+            <h2>Limão</h2>
+            <p>O <mark>limao</mark> é uma fruta cítrica, geralmente de cor amarela ou verde, com um sabor marcante e
+                ácido.
+                Ele é amplamente utilizado para temperar alimentos, preparar sucos, fazer conservas e até mesmo em
+                coquetéis. O
+                limão é rico em vitamina C, o que ajuda a fortalecer o sistema imunológico e combate a fadiga e o
+                resfriado
+                comum. Além disso, suas propriedades antioxidantes e desintoxicantes tornam-no benéfico para a saúde da
+                pele e
+                do fígado.</p>
+        </div>
+        <img src="https://static.biologianet.com/conteudo/images/no-abacaxi-parte-comestivel-fruta-desenvolveu-se-diversas-pecas-florais-os-frutos-sao-cada-escama-casca-58f62e2a3fdfd.jpg"
+            alt="Limão">
+    </div>
+
+
+
+</body>
+
+</html>

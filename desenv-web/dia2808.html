@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praticando 1 - Manipulações</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      .menu {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+      .menu div {
+        display: flex;
+        align-items: center;
+      }
+      .menu h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .menu button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .menu button.active {
+        background-color: #0056b3;
+      }
+      .menu button:hover {
+        background-color: #0056b3;
+      }
+      #content {
+        text-align: left;
+        margin: auto;
+        width: 80%;
+      }
+      img {
+        width: 150px;
+        height: auto;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Praticando 1 - Manipulações</h1>
+    <div class="menu">
+      <!-- Lado -->
+      <div>
+        <h2>Lado</h2>
+        <button id="leftBtn" class="active" onclick="setAlignment('left')">
+          Esquerdo
+        </button>
+        <button id="rightBtn" onclick="setAlignment('right')">Direito</button>
+      </div>
+      <!-- Parágrafos -->
+      <div>
+        <h2>Parágrafos</h2>
+        <button onclick="addParagraph()">Adicionar</button>
+        <button onclick="removeFirstParagraph()">Remover primeiro</button>
+        <button onclick="removeLastParagraph()">Remover último</button>
+        <button onclick="removeAllParagraphs()">Remover todos</button>
+      </div>
+      <!-- Imagens -->
+      <div>
+        <h2>Imagens</h2>
+        <button onclick="addImage()">Adicionar</button>
+        <button onclick="removeImage()">Remover uma</button>
+        <button onclick="removeAllImages()">Remover todas</button>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="paragraphs"></div>
+      <div id="images"></div>
+    </div>
+    
+  <script>
+  let paragraphCount = 0;
+  let alignment = "left";
+
+      function setAlignment(side) {
+        alignment = side;
+
+        // Atualiza estilo de alinhamento
+        const content = document.getElementById("content");
+        content.style.textAlign = alignment;
+
+        // Atualiza botões ativos
+        document
+          .getElementById("leftBtn")
+          .classList.toggle("active", side === "left");
+        document
+          .getElementById("rightBtn")
+          .classList.toggle("active", side === "right");
+      }
+
+      // Funções para manipular parágrafos
+      function addParagraph() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        const p = document.createElement("p");
+        p.textContent =`${paragraphCount} - Lorem ipsum dolor sit amet, consectetur adipisicing elit.`;
+        paragraphsDiv.appendChild(p);
+        paragraphCount++;
+      }
+
+      function removeFirstParagraph() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        if (paragraphsDiv.firstChild) {
+          paragraphsDiv.removeChild(paragraphsDiv.firstChild);
+        }
+      }
+
+      function removeLastParagraph() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        if (paragraphsDiv.lastChild) {
+          paragraphsDiv.removeChild(paragraphsDiv.lastChild);
+        }
+      }
+
+      function removeAllParagraphs() {
+        const paragraphsDiv = document.getElementById("paragraphs");
+        paragraphsDiv.innerHTML = "";
+        paragraphCount = 0;
+      }
+
+      // Funções para manipular imagens
+      function addImage() {
+        const imagesDiv = document.getElementById("images");
+        const img = document.createElement("img");
+        img.src =
+          "data:image/webp;base64,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";
+        imagesDiv.appendChild(img);
+      }
+
+      function removeImage() {
+        const imagesDiv = document.getElementById("images");
+        if (imagesDiv.lastChild) {
+          imagesDiv.removeChild(imagesDiv.lastChild);
+        }
+      }
+
+      function removeAllImages() {
+        const imagesDiv = document.getElementById("images");
+        imagesDiv.innerHTML = "";
+      }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Formulário de cadastro</h2>
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome completo:</label>
+                        <input type="text" class="form-control" id="nome" required>
+                        <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" pattern="\(\d{2}\)\d{4,5}-\d{4}" placeholder="(DD)XXXXX-XXXX" required>
+                            <div class="invalid-feedback">Formato esperado: (DD)XXXXX-XXXX</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="XXX.XXX.XXX-XX" required>
+                            <div class="invalid-feedback">Formato esperado: XXX.XXX.XXX-XX</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="data-nascimento" required>
+                            <div class="invalid-feedback">Por favor, insira sua data de nascimento.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="cep" pattern="\d{2}\.\d{3}-\d{3}" placeholder="XX.XXX-XXX" required>
+                            <div class="invalid-feedback">Formato esperado: XX.XXX-XXX</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <select class="form-select" id="cidade" required>
+                                <option value="" selected disabled>Selecione</option>
+                                <option value="SaoPaulo">São Paulo</option>
+                                <option value="RioDeJaneiro">Rio de Janeiro</option>
+                                <option value="BeloHorizonte">Belo Horizonte</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecione uma cidade.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" required>
+                        <div class="invalid-feedback">Por favor, insira seu endereço.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="foto-perfil" class="form-label">Foto de perfil</label>
+                            <input type="file" class="form-control" id="foto-perfil" accept="image/*" required>
+                            <div class="invalid-feedback">Por favor, envie uma imagem.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="contrato" class="form-label">Contrato assinado (PDF, DOC, DOCX)</label>
+                            <input type="file" class="form-control" id="contrato" accept=".pdf,.doc,.docx" required>
+                            <div class="invalid-feedback">Por favor, envie um arquivo válido (PDF, DOC, DOCX).</div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="reset" class="btn btn-warning">Limpar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 d-flex align-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png" class="img-fluid" alt="Bootstrap Logo">
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>

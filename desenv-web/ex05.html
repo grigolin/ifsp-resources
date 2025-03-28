@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+
+			background-color: #add8e6;
+		}
+
+		#tabela-1 {
+			height: 60vh;
+			width: 45vw;
+		}
+
+		#tabela-1 td,
+		tr {
+			margin: 20px 0px;
+			border: 2px solid red;
+		}
+
+		#tabela-1 td,
+		tr {
+			padding: 20px;
+			text-align: center;
+		}
+
+		.linha-amarela {
+			background-color: yellow;
+		}
+
+		.linha-verde {
+			background-color: green;
+		}
+
+		.linha-vermelha {
+			background-color: red;
+		}
+
+		.linha-azul {
+			background-color: blue;
+		}
+
+		#tabela-legenda {
+			background-color: white;
+			height: 10px;
+			width: 333px;
+		}
+
+		#tabela-legenda,
+		tr,
+		td {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Praticando 5 - Tabela grande com colspan e rowspan e planos de fundo</h1>
+	<a href="index.html">Voltar ao menu principal</a>
+	<table id="tabela-1">
+		<caption>Tabela grande com colspan e rowspan</caption>
+		<tr class="linha-verde">
+			<td colspan="2">Colspan</td>
+			<td>-</td>
+			<td rowspan="3">Rowspan</td>
+		</tr>
+		<tr class="linha-vermelha">
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr class="linha-azul">
+			<td>-</td>
+			<td colspan="2">Colspan</td>
+		</tr>
+		<tr class="linha-amarela">
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+	</table>
+
+	<table id="tabela-legenda">
+		<caption class="legenda-sem-fundo">Legenda</caption>
+		<tr>
+			<td>Linha 1</td>
+			<td class="linha-verde">-------</td>
+			<td>green</td>
+		</tr>
+		<tr>
+			<td>Linha 2</td>
+			<td class="linha-vermelha">-------</td>
+			<td>red</td>
+		</tr>
+		<tr>
+			<td>Linha 3</td>
+			<td class="linha-azul">-------</td>
+			<td>blue</td>
+		</tr>
+		<tr>
+			<td>Linha 4</td>
+			<td class="linha-amarela">-------</td>
+			<td>yellow</td>
+		</tr>
+	</table>
+
+
+</body>
+
+</html>

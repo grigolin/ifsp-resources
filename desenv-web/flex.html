@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praticando 1 - Flexbox</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Henny+Penny&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --verdeClaro: rgb(178, 245, 182);
+        --verdeEscuro: rgb(14, 165, 25);
+      }
+
+      p,
+      h1,
+      h2,
+      a {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+      }
+
+      h1 {
+        margin-bottom: 0;
+        font-size: 1.5vw;
+        margin: 0;
+      }
+
+      p {
+        font-size: 0.75vw;
+      }
+
+      a {
+        padding: 10px;
+        font-size: 1vw;
+      }
+
+      body {
+        margin: 0;
+        background-color: white;
+      }
+
+      header {
+        background-color: var(--verdeClaro);
+        border-bottom: 2px solid var(--verdeEscuro);
+        padding-bottom: 1vw;
+        text-indent: 2vw;
+      }
+
+      footer {
+        background-color: var(--verdeClaro);
+        border-top: 2px solid var(--verdeEscuro);
+        padding: 1vw 0;
+      }
+
+      footer > p {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .container {
+        display: flex;
+        background-color: white;
+      }
+
+      .container-quadrados {
+        padding: 10px 20px;
+        display: flex;
+        flex-flow: row wrap;
+        width: 77%;
+        margin-left: 0.3vw;
+        background-color: white;
+        align-content: flex-start;
+      }
+
+      .container-quadrados > div {
+        width: 10vw;
+        height: 4vw;
+        border: 1px solid black;
+        margin: 0.5vw;
+        padding-bottom: 1vw;
+        text-align: center;
+        padding: 20px 10px;
+      }
+
+      .container-quadrados > h2 {
+        flex-basis: 100%;
+        width: 0;
+        margin-left: 0.5vw;
+      }
+
+      .container-lateral {
+        border-left: 2px solid var(--verdeEscuro);
+        width: 22%;
+      }
+
+      .container-lateral > p {
+        text-align: justify;
+        text-indent: 0.5vw;
+        margin-left: 2vw;
+        margin-right: 1vw;
+        font-size: small;
+      }
+
+      .container-lateral > h2 {
+        text-align: center;
+        margin-left: 0.5vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>.:: Meu layout de site com FlexBox ::.</h1>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Sobre</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="container-quadrados">
+          <h2>Corpo do site</h2>
+          <div>
+            <h1>1</h1>
+            <p><i>One</i></p>
+          </div>
+          <div>
+            <h1>2</h1>
+            <p><i>Two</i></p>
+          </div>
+          <div>
+            <h1>3</h1>
+            <p><i>Three</i></p>
+          </div>
+          <div>
+            <h1>4</h1>
+            <p><i>Four</i></p>
+          </div>
+          <div>
+            <h1>5</h1>
+            <p><i>Five</i></p>
+          </div>
+          <div>
+            <h1>6</h1>
+            <p><i>Six</i></p>
+          </div>
+          <div>
+            <h1>7</h1>
+            <p><i>Seven</i></p>
+          </div>
+          <div>
+            <h1>8</h1>
+            <p><i>Eight</i></p>
+          </div>
+          <div>
+            <h1>9</h1>
+            <p><i>Nine</i></p>
+          </div>
+          <div>
+            <h1>10</h1>
+            <p><i>Ten</i></p>
+          </div>
+        </div>
+
+        <div class="container-lateral">
+          <h2>Box Lateral</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi iste
+            eligendi tenetur facere possimus amet cupiditate, accusamus quisquam
+            voluptates impedit nulla officia. Praesentium minus beatae ea, quae
+            repudiandae unde! Similique impedit repudiandae id rerum veniam,
+            illo ea debitis temporibus sapiente sit. Possimus sed recusandae
+            delectus culpa officiis praesentium in ratione cupiditate suscipit
+            vitae, laborum rerum dicta exercitationem quo dolore sit!
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>LOrem Ipsum</p>
+      <p>lorem ipsujm lorem ,lore</p>
+    </footer>
+  </body>
+</html>

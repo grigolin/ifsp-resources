@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #welcome-message {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    #buttons {
+      margin-bottom: 20px;
+    }
+    .paragraph {
+      margin-top: 10px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Perguntar o nome do usuário
+      const name = prompt("Qual é o seu nome?", "Fulano");
+
+      if (name && name.trim() !== "") {
+        $("#welcome-message").text(`Seja bem-vindo(a), ${name}!`);
+      } else {
+        $("#welcome-message").text("Seja bem-vindo(a)!");
+      }
+
+          $("#add-paragraph").click(function() {
+        const paragraph = $("<p></p>")
+          .text("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+          .addClass("paragraph");
+        $("#content").append(paragraph);
+      });
+
+      // Remover todos os parágrafos ao clicar no botão "Remover Todos os Textos"
+      $("#remove-paragraphs").click(function() {
+        $("#content").empty();
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="welcome-message"></div>
+  <div id="buttons">
+    <button id="add-paragraph">Adicionar Texto</button>
+    <button id="remove-paragraphs">Remover Todos os Textos</button>
+  </div>
+  <div id="content"></div>
+</body>
+</html>
+

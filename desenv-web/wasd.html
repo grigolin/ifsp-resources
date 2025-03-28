@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin: 0 auto;
+            font-size: 120%;
+            font-weight: bolder;
+        }
+
+        .container > p {
+            text-decoration: underline;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .vermelho {
+            border: 3px black solid;
+            width: 10vh;
+            height: 10vh;
+            background-color: red;
+            margin-right: 2%;
+        }
+
+        .azul {
+            border: 3px black solid;
+            width: 10vh;
+            height: 10vh;
+            background-color: blue;
+            margin-right: 2%;
+        }
+
+        .verde {
+            border: 3px black solid;
+            width: 10vh;
+            height: 10vh;
+            background-color: green;
+            margin-right: 2%;
+        }
+
+        .container_quadrados {
+            display: flex;
+        }
+
+        .selecionado {
+            position: absolute;
+            border: 3px yellow solid;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Praticando 4 - Mini-game JS</h1>
+        <br>
+        <br>
+
+        <p>Instruções:</p>
+        <ol>
+            <li>Clique em um dos quadrados coloridos.</li>
+            <li>Depois use as teclas <mark>W</mark> <mark>A</mark> <mark>S</mark> <mark>D</mark> para movimentar os elementos para cima, esquerda, baixo e direita respectivamente.</li>
+        </ol>
+
+        <div class="center">
+            <img src="wasd.jpg" alt="wasd">
+        </div>
+
+        <div class="container_quadrados">
+            <div class="quadrado vermelho"></div>
+            <div class="quadrado azul"></div>
+            <div class="quadrado verde"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let $quadradoSelecionado = null;
+
+            // Clique nos quadrados para selecioná-los
+            $(".quadrado").on("click", function () {
+                if ($(this).hasClass("selecionado")) {
+                    $(this).removeClass("selecionado");
+                    $quadradoSelecionado = null;
+                } else if ($quadradoSelecionado) {
+                    alert("Já há um quadrado selecionado");
+                } else {
+                    $(this).addClass("selecionado");
+                    $quadradoSelecionado = $(this);
+                }
+            });
+
+            // Movimentação com as teclas WASD e setas
+            $(document).on("keydown", function (e) {
+                if ($quadradoSelecionado) {
+                    let left = parseInt($quadradoSelecionado.css("left")) || 0;
+                    let top = parseInt($quadradoSelecionado.css("top")) || 0;
+
+                    if (e.key === "w" || e.key === "ArrowUp") {
+                        top -= 10;
+                    } else if (e.key === "a" || e.key === "ArrowLeft") {
+                        left -= 10;
+                    } else if (e.key === "s" || e.key === "ArrowDown") {
+                        top += 10;
+                    } else if (e.key === "d" || e.key === "ArrowRight") {
+                        left += 10;
+                    }
+
+                    $quadradoSelecionado.css({ left: left + "px", top: top + "px" });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
