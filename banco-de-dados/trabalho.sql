@@ -16,7 +16,7 @@ CREATE SEQUENCE sid_carro START WITH 1 INCREMENT BY 1 MINVALUE 1 MAXVALUE 10000;
 --PEDIDO (idPed, dtaPed, totalPed, status, idCli (FK CLIENTE))
 --PRODUTO (idProd, nomeProd, marcaProd, preco, avaliação)
 --PEDIDOPRODUTO(idPed (FK PEDIDO), idProd (FK PRODUTO), qtdade)
---AVALIACAOPEDIDOPRODUTO(idCli (FK CLIENTE), idPed (FK PEDIDOPRODUTO), idProd(FK PEDIDOPRODUTO), nota, dtaAvaliacao)
+--AVALIAPEDIDOPRODUTO(idCli (FK CLIENTE), idPed (FK PEDIDOPRODUTO), idProd(FK PEDIDOPRODUTO), nota, dtaAvaliacao)
 
 -- 3
 CREATE VIEW v_clientes_nuncacompraram AS
@@ -28,27 +28,27 @@ RETURNS SETOF VARCHAR AS $$
 declare
     reg record;
 BEGIN
-    for reg in SELECT nomeCli, EXTRACT(MONTH FROM dtaNasc) as mes_nasc FROM cliente WHERE EXTRACT(MONTH FROM dtaNasc) = mes
+    for reg in SELECT nomeCli, EXTRACT(MONTH FROM dtaNasc) as mes_nasc FROM cliente WHERE 
+	EXTRACT(MONTH FROM dtaNasc) = mes
         LOOP
             RETURN NEXT reg.nomeCli || ' faz aniversario no mes ' || reg.mes_nasc;
         END LOOP;
 END;
 $$ LANGUAGE plpgsql;
 
+select * from f_clientes_aniversario_mes(10)
+
 -- 5
--- Crie uma trigger para bloquear inserções de avaliações na tabela avaliaPedidoProduto
---antes que o status do pedido seja alterado para Entregue. Deve ser criado um BEFORE
---INSERT na tabela avaliaPedidoProduto. Uma mensagem de “Não devem ser avaliados
---pedidos não entregues deve ser enviada em caso de tentativa de inserção de avaliação
---de pedidos não entregues.
 
 CREATE OR REPLACE FUNCTION block_avaliacao()
 RETURNS TRIGGER AS $$
 BEGIN
-    if new.status <> 'Entregue' then
-        raise exception 'Não devem ser avaliados pedidos não entregues';
-    end if;
-    return new;
+    IF (SELECT status 
+        FROM PEDIDO 
+        WHERE idPed = NEW.idPed) <> 'Entregue' THEN
+        RAISE EXCEPTION 'Não devem ser avaliados pedidos não entregues';
+    END IF;
+    RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -56,3 +56,42 @@ CREATE OR REPLACE TRIGGER trg_block_avaliacao BEFORE INSERT ON AVALIAPEDIDOPRODU
 FOR EACH ROW
 EXECUTE PROCEDURE block_avaliacao();
 END
+
+-- 6
+
+CREATE OR REPLACE FUNCTION att_avaliacao_produto()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF (SELECT status 
+        FROM PEDIDO 
+        WHERE idPed = NEW.idPed) <> 'Entregue' THEN
+        RAISE EXCEPTION 'Não devem ser atualizadas avaliações de pedidos não entregues';
+    END IF;
+
+    UPDATE PRODUTO
+    SET avaliacao = (
+		SELECT AVG(nota)
+        FROM avaliaPedidoProduto
+        WHERE idProd = NEW.idProd)
+    WHERE idProd = NEW.idProd;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE TRIGGER trg_update_avaliacao
+AFTER INSERT ON avaliaPedidoProduto
+FOR EACH ROW
+EXECUTE PROCEDURE att_avaliacao_produto();
+
+-- 7
+-- A
+
+-- 8
+-- B
+
+-- 9
+-- E
+
+-- 10
+-- C

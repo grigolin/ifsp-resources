@@ -20,7 +20,7 @@ create table carro(
 insert into carro values (nextval('sid_carros'), 'abc1', 'kd2jk3', 'modelo', 'honda', 2000, '10000');
 insert into carro values (nextval('sid_carros'), 'lcj2', '8hu2l3', 'modelo1', 'toyota', 1999, '1000');
 
--- 4 - C
+-- 4 - C 
 
 -- 5
 create or replace view vclprod as 
@@ -77,7 +77,50 @@ begin
 end;
 $$ language plpgsql;
 
-select * from fatuvend()
 
 -- 9
+CREATE OR REPLACE FUNCTION trigger_atualiza_valor_venda()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE item_pedido
+    SET valor_venda = p.valor_venda
+    FROM produto p
+    WHERE item_pedido.codigo_produto = p.codigo_produto
+    AND item_pedido.num_pedido = NEW.num_pedido
+    AND item_pedido.codigo_produto = NEW.codigo_produto;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
+CREATE TRIGGER trg_atualiza_valor_venda
+AFTER INSERT ON item_pedido
+FOR EACH ROW
+EXECUTE FUNCTION trigger_atualiza_valor_venda();
+
+-- 10
+CREATE OR REPLACE FUNCTION trigger_atualiza_total_pedido()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE pedido
+    SET total_pedido = (
+        SELECT SUM(quantidade * valor_venda)
+        FROM item_pedido
+        WHERE num_pedido = NEW.num_pedido
+    )
+    WHERE num_pedido = NEW.num_pedido;
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_atualiza_total_pedido
+AFTER UPDATE OF valor_venda ON item_pedido
+FOR EACH ROW
+EXECUTE FUNCTION trigger_atualiza_total_pedido();
+
+-- 11
+-- B
+
+-- 12
+-- E
