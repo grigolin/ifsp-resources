@@ -1,0 +1,63 @@
+arquivo,origem,classe,motivo
+seg_train/buildings/1542.jpg,seg_train,buildings,duplicata de imagem do teste
+seg_train/buildings/4551.jpg,seg_train,buildings,duplicata com rótulos conflitantes
+seg_train/buildings/4634.jpg,seg_train,buildings,duplicata de imagem do teste
+seg_train/buildings/5069.jpg,seg_train,buildings,duplicata com rótulos conflitantes
+seg_train/buildings/5708.jpg,seg_train,buildings,duplicata de imagem do teste
+seg_train/buildings/9769.jpg,seg_train,buildings,duplicata com rótulos conflitantes
+seg_train/forest/11447.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/15586.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/15657.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/17811.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/18807.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/19563.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/2339.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/3259.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/3396.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/4029.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/4275.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/5219.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/8394.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/forest/9419.jpg,seg_train,forest,duplicata de imagem do teste
+seg_train/glacier/10234.jpg,seg_train,glacier,duplicata com rótulos conflitantes
+seg_train/glacier/10412.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/11616.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/13228.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/13300.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/13722.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/15424.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/15571.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/16044.jpg,seg_train,glacier,duplicata com rótulos conflitantes
+seg_train/glacier/16827.jpg,seg_train,glacier,duplicata com rótulos conflitantes
+seg_train/glacier/17312.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/17845.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/19319.jpg,seg_train,glacier,duplicata com rótulos conflitantes
+seg_train/glacier/3219.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/3647.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/5505.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/7861.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/8191.jpg,seg_train,glacier,duplicata com rótulos conflitantes
+seg_train/glacier/8194.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/8196.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/855.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/8558.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/glacier/8608.jpg,seg_train,glacier,duplicata com rótulos conflitantes
+seg_train/glacier/8867.jpg,seg_train,glacier,duplicata de imagem do teste
+seg_train/mountain/14341.jpg,seg_train,mountain,duplicata de imagem do teste
+seg_train/mountain/15770.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/16696.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/17775.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/19959.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/6518.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/7037.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/7401.jpg,seg_train,mountain,duplicata de imagem do teste
+seg_train/mountain/7654.jpg,seg_train,mountain,duplicata com rótulos conflitantes
+seg_train/mountain/8373.jpg,seg_train,mountain,duplicata de imagem do teste
+seg_train/sea/1345.jpg,seg_train,sea,duplicata de imagem do teste
+seg_train/sea/13858.jpg,seg_train,sea,duplicata de imagem do teste
+seg_train/sea/6337.jpg,seg_train,sea,duplicata com rótulos conflitantes
+seg_train/street/10408.jpg,seg_train,street,duplicata de imagem do teste
+seg_train/street/1495.jpg,seg_train,street,duplicata com rótulos conflitantes
+seg_train/street/2764.jpg,seg_train,street,duplicata com rótulos conflitantes
+seg_train/street/5321.jpg,seg_train,street,duplicata de imagem do teste
+seg_train/street/7293.jpg,seg_train,street,duplicata com rótulos conflitantes

@@ -1,0 +1,20 @@
+{
+  "python": "3.13.16",
+  "tensorflow": "2.21.0",
+  "keras": "3.13.2",
+  "numpy": "2.1.3",
+  "pandas": "2.2.3",
+  "scikit-learn": "1.6.1",
+  "matplotlib": "3.10.0",
+  "pillow": "11.3.0",
+  "imagehash": "4.3.2",
+  "sistema": "Linux-6.6.159+-x86_64-with-glibc2.39",
+  "cpu": "Intel(R) Xeon(R) CPU @ 2.00GHz",
+  "nucleos_cpu": 2,
+  "ram_gb": 12.7,
+  "gpus": [
+    "/physical_device:GPU:0"
+  ],
+  "ambiente_execucao": "Google Colab com GPU (runtime T4)",
+  "semente": 42
+}

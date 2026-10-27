@@ -1,0 +1,20 @@
+{
+  "selecionado": "E7",
+  "acc_teste": 0.8736666666666667,
+  "f1_macro_teste": 0.8748344601353516,
+  "escolhidos_e7": [
+    "E2",
+    "E3",
+    "E6"
+  ],
+  "config_e7": {
+    "filtros": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "dropout": 0.3,
+    "aumentar": true
+  }
+}

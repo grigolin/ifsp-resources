@@ -1,0 +1,8 @@
+classe,Treino,Validação,Teste,% validação/(treino+val)
+buildings,1747,438,437,20.0
+forest,1806,451,474,20.0
+glacier,1904,476,553,20.0
+mountain,2004,498,525,19.9
+sea,1816,455,510,20.0
+street,1903,474,501,19.9
+TOTAL,11180,2792,3000,20.0
