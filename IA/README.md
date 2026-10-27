@@ -21,6 +21,8 @@ no teste, acurácia **0,874** e F1 macro **0,875**.
 
 O notebook foi executado no Google Colab (GPU T4). Os pesos treinados não estão no repositório: o runtime do Colab foi
 reiniciado antes do download, e os demais artefatos de `resultados/` foram extraídos das saídas do notebook executado.
+As listas `split_*.csv` foram regeneradas com o mesmo código, semente e versões de bibliotecas (contagens por classe e
+imagens de exemplo conferidas como idênticas). A coluna `checkpoint` da tabela indica o arquivo usado na execução.
 
 ## Como executar
 1. `pip install tensorflow kagglehub scikit-learn pandas matplotlib pillow imagehash`

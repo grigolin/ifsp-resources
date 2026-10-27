@@ -15,6 +15,6 @@
   "gpus": [
     "/physical_device:GPU:0"
   ],
-  "ambiente_execucao": "Google Colab com GPU (runtime T4)",
+  "ambiente_execucao": "Google Colab com GPU (runtime T4 selecionado pelo usuário; o notebook registra apenas /physical_device:GPU:0)",
   "semente": 42
 }
